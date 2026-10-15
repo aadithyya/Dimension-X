@@ -45,6 +45,19 @@ final class CanonicalJSONTests: XCTestCase {
             let boolVal: Bool
             let nullVal: String?
             let array: [String]
+
+            enum CodingKeys: String, CodingKey {
+                case z, a, boolVal, nullVal, array
+            }
+
+            func encode(to encoder: Encoder) throws {
+                var container = encoder.container(keyedBy: CodingKeys.self)
+                try container.encode(z, forKey: .z)
+                try container.encode(a, forKey: .a)
+                try container.encode(boolVal, forKey: .boolVal)
+                try container.encode(nullVal, forKey: .nullVal)
+                try container.encode(array, forKey: .array)
+            }
         }
 
         let obj = TestObj(z: "last", a: 42, boolVal: true, nullVal: nil, array: ["b", "a"])

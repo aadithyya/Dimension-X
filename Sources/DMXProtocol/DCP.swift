@@ -74,12 +74,16 @@ public struct DCPEvent: Codable, Sendable {
     }
 }
 
-public struct DCPError: Codable, Sendable {
+public struct DCPError: Error, LocalizedError, Codable, Sendable {
     public var code: String
     public var message: String
 
     public init(code: String, message: String) {
         self.code = code
         self.message = message
+    }
+
+    public var errorDescription: String? {
+        "[\(code)] \(message)"
     }
 }

@@ -61,13 +61,13 @@ let package = Package(
         ),
         .executableTarget(
             name: "DimensionX",
-            dependencies: ["DMXModel", "DMXProtocol"]
+            dependencies: ["DMXModel", "DMXProtocol", "DMXCore"]
         ),
         .executableTarget(
             name: "dmx-test-runner",
             dependencies: ["DMXModel", "DMXProtocol", "DMXInspectKit", "DMXCore"]
         ),
-        // Test targets
+
         .testTarget(
             name: "DMXModelTests",
             dependencies: ["DMXModel"]
