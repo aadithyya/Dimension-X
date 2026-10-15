@@ -1,4 +1,4 @@
-# Dimension X (DMX) V1
+# Dimension X (DMX)
 
 Dimension X (DMX) is a local-first macOS Windows-compatibility control plane. DMX provides clean orchestration, environment isolation, and evidence-based compatibility reporting around Wine on macOS Apple Silicon.
 
